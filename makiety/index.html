@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pl" data-theme="a">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gloria Victis: makiety</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+:root {
+  --maxw: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 6px;
+}
+[data-theme="a"] {
+  --bg: #F5F6F8; --surface: #FFFFFF; --ink: #101B2D; --muted: #505D70; --line: #D8DDE5;
+  --brand: #14284B; --accent: #B48C3C; --accent-ink: #84651F;
+  --hero-bg: #14284B; --hero-ink: #F2F4F7; --hero-muted: #B9C3D3; --hero-line: #2A4170;
+  --gv-laur: #C9A34E; --gv-glob: #C9D3E3; --gv-wezel: #F2F4F7;
+  --btn-bg: #C9A34E; --btn-ink: #14284B; --btn2-ink: #F2F4F7; --btn2-line: #4A6190;
+  --font-display: "Newsreader Variable", Georgia, serif; --display-weight: 500; --display-track: -0.01em;
+  --font-body: "Public Sans Variable", "Segoe UI", sans-serif;
+  --tile: #FFFFFF;
+}
+[data-theme="b"] {
+  --bg: #EDF0EA; --surface: #F8F9F5; --ink: #16241D; --muted: #4E5E55; --line: #CCD5CB;
+  --brand: #1E4535; --accent: #A4824A; --accent-ink: #7C5F2E;
+  --hero-bg: #EDF0EA; --hero-ink: #16241D; --hero-muted: #4E5E55; --hero-line: #CCD5CB;
+  --gv-laur: #A4824A; --gv-glob: #1E4535; --gv-wezel: #1E4535;
+  --btn-bg: #1E4535; --btn-ink: #F3F5EF; --btn2-ink: #1E4535; --btn2-line: #9FB1A4;
+  --font-display: "Marcellus", "Times New Roman", serif; --display-weight: 400; --display-track: 0;
+  --font-body: "Source Sans 3 Variable", "Segoe UI", sans-serif;
+  --tile: #FFFFFF;
+}
+[data-theme="c"] {
+  --bg: #0C1826; --surface: #12233A; --ink: #ECE9E1; --muted: #9DAEC0; --line: #233A55;
+  --brand: #ECE9E1; --accent: #3CC7BC; --accent-ink: #62D7CD;
+  --hero-bg: #0C1826; --hero-ink: #ECE9E1; --hero-muted: #9DAEC0; --hero-line: #233A55;
+  --gv-laur: #DCD7CB; --gv-glob: #6F86A0; --gv-wezel: #3CC7BC;
+  --btn-bg: #3CC7BC; --btn-ink: #0C1826; --btn2-ink: #ECE9E1; --btn2-line: #3A5676;
+  --font-display: "Schibsted Grotesk Variable", "Segoe UI", sans-serif; --display-weight: 600; --display-track: -0.025em;
+  --font-body: "Schibsted Grotesk Variable", "Segoe UI", sans-serif;
+  --tile: #F4F2EC;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: var(--display-weight); letter-spacing: var(--display-track); line-height: 1.12; margin: 0; }
+
+/* pasek informacyjny o makiecie */
+.demo { background: var(--accent); color: #101B2D; font-size: 14px; text-align: center; padding: 6px var(--gutter); }
+
+/* hero z nawigacją */
+.hero { background: var(--hero-bg); color: var(--hero-ink); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--hero-line); }
+.marka { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marka svg { width: 46px; height: 46px; }
+.marka-nazwa { font-family: var(--font-display); font-size: 21px; letter-spacing: 0.16em; font-weight: var(--display-weight); line-height: 1; }
+.marka-nazwa small { display: block; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.02em; color: var(--hero-muted); margin-top: 5px; }
+.nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 15px; }
+.nav ul a { text-decoration: none; color: var(--hero-muted); }
+.nav ul a:hover { color: var(--hero-ink); }
+.btn { display: inline-block; padding: 13px 22px; border-radius: var(--radius); font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid transparent; cursor: pointer; font-family: var(--font-body); }
+.btn-1 { background: var(--btn-bg); color: var(--btn-ink); }
+.btn-2 { color: var(--btn2-ink); border-color: var(--btn2-line); }
+.nav .btn { padding: 10px 18px; font-size: 15px; }
+
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; padding: 72px 0 84px; }
+.hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.1rem); max-width: 15ch; }
+.hero .lead { font-size: 19px; color: var(--hero-muted); max-width: 56ch; margin: 26px 0 34px; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .bilans { margin-top: 36px; font-size: 15px; color: var(--hero-muted); }
+.hero .bilans b { color: var(--hero-ink); font-weight: 600; }
+.hero-emblemat { width: 100%; max-width: 440px; justify-self: center; }
+.gv-liscie path { animation: lisc .7s ease-out both; animation-delay: calc(var(--i) * 55ms + 150ms); }
+@keyframes lisc { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .gv-liscie path { animation: none; } }
+
+/* programy */
+.programy { padding: 40px 0; border-bottom: 1px solid var(--line); }
+.programy-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.programy h2 { font-family: var(--font-body); font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-bottom: 16px; }
+.znak { background: var(--tile); border: 1px solid var(--line); border-radius: var(--radius); height: 62px; padding: 0 18px; display: flex; align-items: center; gap: 10px; color: #14284B; font-size: 14px; font-weight: 600; line-height: 1.2; }
+.znak img { height: 30px; width: auto; }
+.znak .ue { height: 34px; }
+.znak .parp { height: 44px; }
+.programy p { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+
+/* proces */
+.sekcja { padding: 96px 0; }
+.proces { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; }
+.proces-glowa { position: sticky; top: 32px; align-self: start; }
+.proces-glowa h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); }
+.proces-glowa p { color: var(--muted); max-width: 40ch; }
+.kroki { list-style: none; margin: 0; padding: 0; counter-reset: krok; }
+.kroki li { display: grid; grid-template-columns: 64px 1fr auto; gap: 8px 20px; padding: 24px 0; border-top: 1px solid var(--line); counter-increment: krok; }
+.kroki li:last-child { border-bottom: 1px solid var(--line); }
+.kroki li::before { content: counter(krok); font-family: var(--font-display); font-size: 34px; line-height: 1; color: var(--accent-ink); }
+.kroki h3 { font-size: 22px; }
+.kroki p { grid-column: 2 / 3; margin: 0; color: var(--muted); }
+.kroki .czas { grid-column: 3; grid-row: 1; font-size: 14px; color: var(--muted); white-space: nowrap; }
+
+/* katalog */
+.katalog { background: var(--surface); border-top: 1px solid var(--line); }
+.katalog-glowa { display: flex; justify-content: space-between; align-items: end; gap: 32px; flex-wrap: wrap; margin-bottom: 28px; }
+.katalog-glowa h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); }
+.katalog-glowa p { color: var(--muted); margin: 10px 0 0; max-width: 52ch; }
+.szukaj { min-width: 280px; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--ink); font: inherit; font-size: 15px; }
+.filtry { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.filtr { border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 14px; cursor: pointer; }
+.filtr[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--bg); }
+.filtr span { color: var(--muted); margin-left: 4px; }
+.filtr[aria-pressed="true"] span { color: inherit; opacity: .7; }
+.osoby { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.osoba { display: grid; grid-template-columns: 88px 1fr; gap: 16px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); }
+.osoba img { width: 88px; height: 88px; object-fit: cover; border-radius: 4px; filter: grayscale(1) contrast(1.05); }
+.osoba .tytul { font-size: 13px; color: var(--muted); }
+.osoba h3 { font-family: var(--font-body); font-size: 17px; font-weight: 650; letter-spacing: 0; line-height: 1.3; }
+.osoba .dz { font-size: 14px; color: var(--accent-ink); font-weight: 600; margin-top: 2px; }
+.osoba .spec { font-size: 14px; color: var(--muted); margin: 6px 0 0; line-height: 1.45; }
+.osoba .dost { font-size: 13px; margin-top: 8px; display: flex; align-items: center; gap: 6px; }
+.osoba .dost::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #3F9B6A; }
+.osoba .dost.pozniej::before { background: #C58B2B; }
+
+/* przełącznik makiet */
+.przelacznik { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); background: #101B2D; color: #fff; border-radius: 999px; padding: 6px; display: flex; gap: 4px; box-shadow: 0 6px 24px rgba(0,0,0,.25); z-index: 10; font-size: 14px; }
+.przelacznik button { background: transparent; color: #C9D1DC; border: 0; border-radius: 999px; padding: 8px 14px; font: inherit; cursor: pointer; white-space: nowrap; }
+.przelacznik button[aria-pressed="true"] { background: #fff; color: #101B2D; font-weight: 600; }
+
+@media (max-width: 960px) {
+  .nav ul { display: none; }
+  .hero-grid, .proces { grid-template-columns: 1fr; }
+  .hero-emblemat { max-width: 260px; order: -1; justify-self: start; }
+  .proces-glowa { position: static; }
+  .osoby { grid-template-columns: 1fr; }
+  .przelacznik { font-size: 12px; }
+  .przelacznik button { padding: 8px 10px; }
+}
+@media (max-width: 560px) {
+  .kroki li { grid-template-columns: 44px 1fr; }
+  .kroki .czas { grid-column: 2; grid-row: auto; }
+  .kroki li::before { font-size: 26px; }
+  .szukaj { min-width: 0; width: 100%; }
+  .przelacznik .opis { display: none; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><!--EMBLEMAT-SYMBOL--><symbol id="gv-emblemat" viewBox="0 0 240 240"><g class="gv-wieniec" fill="var(--gv-laur, #b8954a)" stroke="var(--gv-laur, #b8954a)" stroke-width="0"><g fill="none" stroke-width="2.6" stroke-linecap="round"><path class="gv-lodyga" d="M89.9 37.3A88 88 0 0 0 92.8 203.7Q116.0 214.0 144.0 222.0"/><path class="gv-lodyga" d="M150.1 37.3A88 88 0 0 1 147.2 203.7Q124.0 214.0 96.0 222.0"/></g><g class="gv-liscie"><path style="--i:0" d="M0 0Q11.2 -8.5 25.0 0Q11.2 8.5 0 0Z" transform="translate(84.2 200.4) rotate(174.0)"/><path style="--i:1" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(73.4 194.6) rotate(246.0)"/><path style="--i:2" d="M0 0Q10.7 -8.1 23.9 0Q10.7 8.1 0 0Z" transform="translate(63.4 187.4) rotate(190.0)"/><path style="--i:3" d="M0 0Q8.8 -6.7 19.6 0Q8.8 6.7 0 0Z" transform="translate(54.6 178.9) rotate(262.0)"/><path style="--i:4" d="M0 0Q10.2 -7.7 22.8 0Q10.2 7.7 0 0Z" transform="translate(47.0 169.2) rotate(206.0)"/><path style="--i:5" d="M0 0Q8.4 -6.3 18.7 0Q8.4 6.3 0 0Z" transform="translate(40.9 158.6) rotate(278.0)"/><path style="--i:6" d="M0 0Q9.7 -7.4 21.6 0Q9.7 7.4 0 0Z" transform="translate(36.3 147.2) rotate(222.0)"/><path style="--i:7" d="M0 0Q8.0 -6.0 17.7 0Q8.0 6.0 0 0Z" transform="translate(33.3 135.3) rotate(294.0)"/><path style="--i:8" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(32.1 123.1) rotate(238.0)"/><path style="--i:9" d="M0 0Q7.6 -5.7 16.8 0Q7.6 5.7 0 0Z" transform="translate(32.5 110.8) rotate(310.0)"/><path style="--i:10" d="M0 0Q8.7 -6.6 19.4 0Q8.7 6.6 0 0Z" transform="translate(34.6 98.7) rotate(254.0)"/><path style="--i:11" d="M0 0Q7.1 -5.4 15.9 0Q7.1 5.4 0 0Z" transform="translate(38.4 87.0) rotate(326.0)"/><path style="--i:12" d="M0 0Q8.2 -6.2 18.2 0Q8.2 6.2 0 0Z" transform="translate(43.8 76.0) rotate(270.0)"/><path style="--i:13" d="M0 0Q6.7 -5.1 15.0 0Q6.7 5.1 0 0Z" transform="translate(50.7 65.8) rotate(342.0)"/><path style="--i:14" d="M0 0Q7.7 -5.8 17.1 0Q7.7 5.8 0 0Z" transform="translate(58.9 56.7) rotate(286.0)"/><path style="--i:15" d="M0 0Q6.3 -4.8 14.0 0Q6.3 4.8 0 0Z" transform="translate(68.3 48.8) rotate(358.0)"/><path style="--i:16" d="M0 0Q7.2 -5.4 16.0 0Q7.2 5.4 0 0Z" transform="translate(78.7 42.3) rotate(302.0)"/><path style="--i:17" d="M0 0Q5.9 -4.5 13.1 0Q5.9 4.5 0 0Z" transform="translate(89.9 37.3) rotate(374.0)"/><path style="--i:18" d="M0 0Q6.8 -5.0 15.0 0Q6.8 5.0 0 0Z" transform="translate(89.9 37.3) rotate(336.0)"/><path style="--i:0" d="M0 0Q11.2 -8.5 25.0 0Q11.2 8.5 0 0Z" transform="translate(155.8 200.4) rotate(6.0)"/><path style="--i:1" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(166.6 194.6) rotate(-66.0)"/><path style="--i:2" d="M0 0Q10.7 -8.1 23.9 0Q10.7 8.1 0 0Z" transform="translate(176.6 187.4) rotate(-10.0)"/><path style="--i:3" d="M0 0Q8.8 -6.7 19.6 0Q8.8 6.7 0 0Z" transform="translate(185.4 178.9) rotate(-82.0)"/><path style="--i:4" d="M0 0Q10.2 -7.7 22.8 0Q10.2 7.7 0 0Z" transform="translate(193.0 169.2) rotate(-26.0)"/><path style="--i:5" d="M0 0Q8.4 -6.3 18.7 0Q8.4 6.3 0 0Z" transform="translate(199.1 158.6) rotate(-98.0)"/><path style="--i:6" d="M0 0Q9.7 -7.4 21.6 0Q9.7 7.4 0 0Z" transform="translate(203.7 147.2) rotate(-42.0)"/><path style="--i:7" d="M0 0Q8.0 -6.0 17.7 0Q8.0 6.0 0 0Z" transform="translate(206.7 135.3) rotate(-114.0)"/><path style="--i:8" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(207.9 123.1) rotate(-58.0)"/><path style="--i:9" d="M0 0Q7.6 -5.7 16.8 0Q7.6 5.7 0 0Z" transform="translate(207.5 110.8) rotate(-130.0)"/><path style="--i:10" d="M0 0Q8.7 -6.6 19.4 0Q8.7 6.6 0 0Z" transform="translate(205.4 98.7) rotate(-74.0)"/><path style="--i:11" d="M0 0Q7.1 -5.4 15.9 0Q7.1 5.4 0 0Z" transform="translate(201.6 87.0) rotate(-146.0)"/><path style="--i:12" d="M0 0Q8.2 -6.2 18.2 0Q8.2 6.2 0 0Z" transform="translate(196.2 76.0) rotate(-90.0)"/><path style="--i:13" d="M0 0Q6.7 -5.1 15.0 0Q6.7 5.1 0 0Z" transform="translate(189.3 65.8) rotate(-162.0)"/><path style="--i:14" d="M0 0Q7.7 -5.8 17.1 0Q7.7 5.8 0 0Z" transform="translate(181.1 56.7) rotate(-106.0)"/><path style="--i:15" d="M0 0Q6.3 -4.8 14.0 0Q6.3 4.8 0 0Z" transform="translate(171.7 48.8) rotate(-178.0)"/><path style="--i:16" d="M0 0Q7.2 -5.4 16.0 0Q7.2 5.4 0 0Z" transform="translate(161.3 42.3) rotate(-122.0)"/><path style="--i:17" d="M0 0Q5.9 -4.5 13.1 0Q5.9 4.5 0 0Z" transform="translate(150.1 37.3) rotate(-194.0)"/><path style="--i:18" d="M0 0Q6.8 -5.0 15.0 0Q6.8 5.0 0 0Z" transform="translate(150.1 37.3) rotate(-156.0)"/></g></g><g class="gv-glob" fill="none" stroke="var(--gv-glob, #1d3557)" stroke-width="1.2" opacity=".45"><circle cx="120" cy="120" r="20"/><circle cx="120" cy="120" r="40"/><circle cx="120" cy="120" r="60"/><path d="M120 120L180.0 120.0"/><path d="M120 120L172.0 150.0"/><path d="M120 120L150.0 172.0"/><path d="M120 120L120.0 180.0"/><path d="M120 120L90.0 172.0"/><path d="M120 120L68.0 150.0"/><path d="M120 120L60.0 120.0"/><path d="M120 120L68.0 90.0"/><path d="M120 120L90.0 68.0"/><path d="M120 120L120.0 60.0"/><path d="M120 120L150.0 68.0"/><path d="M120 120L172.0 90.0"/></g><g class="gv-siec" fill="none" stroke="var(--gv-wezel, #1d3557)" stroke-width="2.4" stroke-linecap="round"><path d="M120.0 120.0L120.0 80.0"/><path d="M120.0 120.0L154.6 140.0"/><path d="M120.0 120.0L85.4 140.0"/><path d="M120.0 80.0L90.0 68.0"/><path d="M120.0 80.0L150.0 68.0"/><path d="M154.6 140.0L180.0 120.0"/><path d="M154.6 140.0L150.0 172.0"/><path d="M85.4 140.0L90.0 172.0"/><path d="M85.4 140.0L60.0 120.0"/><path d="M90.0 68.0L150.0 68.0"/><path d="M150.0 68.0L180.0 120.0"/><path d="M180.0 120.0L150.0 172.0"/><path d="M150.0 172.0L90.0 172.0"/><path d="M90.0 172.0L60.0 120.0"/><path d="M60.0 120.0L90.0 68.0"/></g><g class="gv-wezly" fill="var(--gv-wezel, #1d3557)"><circle cx="120.0" cy="120.0" r="7"/><circle cx="120.0" cy="80.0" r="5"/><circle cx="154.6" cy="140.0" r="5"/><circle cx="85.4" cy="140.0" r="5"/><circle cx="90.0" cy="68.0" r="4.4"/><circle cx="150.0" cy="68.0" r="4.4"/><circle cx="180.0" cy="120.0" r="4.4"/><circle cx="150.0" cy="172.0" r="4.4"/><circle cx="90.0" cy="172.0" r="4.4"/><circle cx="60.0" cy="120.0" r="4.4"/></g></symbol><!--/EMBLEMAT-SYMBOL--></svg>
+
+<div class="demo">Wersja koncepcyjna. Firmy, kwoty i osoby na tej stronie są przykładowe.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav" aria-label="Główna">
+      <a class="marka" href="#">
+        <svg viewBox="0 0 240 240" aria-hidden="true"><use href="#gv-emblemat"/></svg>
+        <span class="marka-nazwa">GLORIA VICTIS<small>Dotacje, nauka, technologia</small></span>
+      </a>
+      <ul>
+        <li><a href="#proces">Jak pracujemy</a></li>
+        <li><a href="#">Technologie</a></li>
+        <li><a href="#">Kadra naukowa</a></li>
+        <li><a href="#">Realizacje</a></li>
+        <li><a href="#katalog">Katalog specjalistów</a></li>
+      </ul>
+      <a class="btn btn-1" href="#">Zgłoś się</a>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1>Twoja firma może dostać dotację. My wiemy, na co ją wydać.</h1>
+        <p class="lead">Prowadzimy projekty z Funduszy Europejskich i programów PARP od pierwszej rozmowy do rozliczenia. Pomysł na innowację wymyślamy razem z tobą, wniosek piszemy sami, a technologię budujemy jako generalny wykonawca. Mamy do tego 142 specjalistów, w tym 31 profesorów.</p>
+        <div class="cta">
+          <a class="btn btn-1" href="#">Umów rozmowę z doradcą</a>
+          <a class="btn btn-2" href="#katalog">Przejrzyj katalog specjalistów</a>
+        </div>
+        <p class="bilans">Od 2019 roku: <b>64 projekty</b> i <b>187,4 mln zł</b> dofinansowania dla naszych klientów.</p>
+      </div>
+      <svg class="hero-emblemat" viewBox="0 0 240 240" role="img" aria-label="Emblemat Gloria Victis: wieniec laurowy wokół globu z siecią węzłów"><!--EMBLEMAT-G--><g class="gv-wieniec" fill="var(--gv-laur, #b8954a)" stroke="var(--gv-laur, #b8954a)" stroke-width="0"><g fill="none" stroke-width="2.6" stroke-linecap="round"><path class="gv-lodyga" d="M89.9 37.3A88 88 0 0 0 92.8 203.7Q116.0 214.0 144.0 222.0"/><path class="gv-lodyga" d="M150.1 37.3A88 88 0 0 1 147.2 203.7Q124.0 214.0 96.0 222.0"/></g><g class="gv-liscie"><path style="--i:0" d="M0 0Q11.2 -8.5 25.0 0Q11.2 8.5 0 0Z" transform="translate(84.2 200.4) rotate(174.0)"/><path style="--i:1" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(73.4 194.6) rotate(246.0)"/><path style="--i:2" d="M0 0Q10.7 -8.1 23.9 0Q10.7 8.1 0 0Z" transform="translate(63.4 187.4) rotate(190.0)"/><path style="--i:3" d="M0 0Q8.8 -6.7 19.6 0Q8.8 6.7 0 0Z" transform="translate(54.6 178.9) rotate(262.0)"/><path style="--i:4" d="M0 0Q10.2 -7.7 22.8 0Q10.2 7.7 0 0Z" transform="translate(47.0 169.2) rotate(206.0)"/><path style="--i:5" d="M0 0Q8.4 -6.3 18.7 0Q8.4 6.3 0 0Z" transform="translate(40.9 158.6) rotate(278.0)"/><path style="--i:6" d="M0 0Q9.7 -7.4 21.6 0Q9.7 7.4 0 0Z" transform="translate(36.3 147.2) rotate(222.0)"/><path style="--i:7" d="M0 0Q8.0 -6.0 17.7 0Q8.0 6.0 0 0Z" transform="translate(33.3 135.3) rotate(294.0)"/><path style="--i:8" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(32.1 123.1) rotate(238.0)"/><path style="--i:9" d="M0 0Q7.6 -5.7 16.8 0Q7.6 5.7 0 0Z" transform="translate(32.5 110.8) rotate(310.0)"/><path style="--i:10" d="M0 0Q8.7 -6.6 19.4 0Q8.7 6.6 0 0Z" transform="translate(34.6 98.7) rotate(254.0)"/><path style="--i:11" d="M0 0Q7.1 -5.4 15.9 0Q7.1 5.4 0 0Z" transform="translate(38.4 87.0) rotate(326.0)"/><path style="--i:12" d="M0 0Q8.2 -6.2 18.2 0Q8.2 6.2 0 0Z" transform="translate(43.8 76.0) rotate(270.0)"/><path style="--i:13" d="M0 0Q6.7 -5.1 15.0 0Q6.7 5.1 0 0Z" transform="translate(50.7 65.8) rotate(342.0)"/><path style="--i:14" d="M0 0Q7.7 -5.8 17.1 0Q7.7 5.8 0 0Z" transform="translate(58.9 56.7) rotate(286.0)"/><path style="--i:15" d="M0 0Q6.3 -4.8 14.0 0Q6.3 4.8 0 0Z" transform="translate(68.3 48.8) rotate(358.0)"/><path style="--i:16" d="M0 0Q7.2 -5.4 16.0 0Q7.2 5.4 0 0Z" transform="translate(78.7 42.3) rotate(302.0)"/><path style="--i:17" d="M0 0Q5.9 -4.5 13.1 0Q5.9 4.5 0 0Z" transform="translate(89.9 37.3) rotate(374.0)"/><path style="--i:18" d="M0 0Q6.8 -5.0 15.0 0Q6.8 5.0 0 0Z" transform="translate(89.9 37.3) rotate(336.0)"/><path style="--i:0" d="M0 0Q11.2 -8.5 25.0 0Q11.2 8.5 0 0Z" transform="translate(155.8 200.4) rotate(6.0)"/><path style="--i:1" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(166.6 194.6) rotate(-66.0)"/><path style="--i:2" d="M0 0Q10.7 -8.1 23.9 0Q10.7 8.1 0 0Z" transform="translate(176.6 187.4) rotate(-10.0)"/><path style="--i:3" d="M0 0Q8.8 -6.7 19.6 0Q8.8 6.7 0 0Z" transform="translate(185.4 178.9) rotate(-82.0)"/><path style="--i:4" d="M0 0Q10.2 -7.7 22.8 0Q10.2 7.7 0 0Z" transform="translate(193.0 169.2) rotate(-26.0)"/><path style="--i:5" d="M0 0Q8.4 -6.3 18.7 0Q8.4 6.3 0 0Z" transform="translate(199.1 158.6) rotate(-98.0)"/><path style="--i:6" d="M0 0Q9.7 -7.4 21.6 0Q9.7 7.4 0 0Z" transform="translate(203.7 147.2) rotate(-42.0)"/><path style="--i:7" d="M0 0Q8.0 -6.0 17.7 0Q8.0 6.0 0 0Z" transform="translate(206.7 135.3) rotate(-114.0)"/><path style="--i:8" d="M0 0Q9.2 -7.0 20.5 0Q9.2 7.0 0 0Z" transform="translate(207.9 123.1) rotate(-58.0)"/><path style="--i:9" d="M0 0Q7.6 -5.7 16.8 0Q7.6 5.7 0 0Z" transform="translate(207.5 110.8) rotate(-130.0)"/><path style="--i:10" d="M0 0Q8.7 -6.6 19.4 0Q8.7 6.6 0 0Z" transform="translate(205.4 98.7) rotate(-74.0)"/><path style="--i:11" d="M0 0Q7.1 -5.4 15.9 0Q7.1 5.4 0 0Z" transform="translate(201.6 87.0) rotate(-146.0)"/><path style="--i:12" d="M0 0Q8.2 -6.2 18.2 0Q8.2 6.2 0 0Z" transform="translate(196.2 76.0) rotate(-90.0)"/><path style="--i:13" d="M0 0Q6.7 -5.1 15.0 0Q6.7 5.1 0 0Z" transform="translate(189.3 65.8) rotate(-162.0)"/><path style="--i:14" d="M0 0Q7.7 -5.8 17.1 0Q7.7 5.8 0 0Z" transform="translate(181.1 56.7) rotate(-106.0)"/><path style="--i:15" d="M0 0Q6.3 -4.8 14.0 0Q6.3 4.8 0 0Z" transform="translate(171.7 48.8) rotate(-178.0)"/><path style="--i:16" d="M0 0Q7.2 -5.4 16.0 0Q7.2 5.4 0 0Z" transform="translate(161.3 42.3) rotate(-122.0)"/><path style="--i:17" d="M0 0Q5.9 -4.5 13.1 0Q5.9 4.5 0 0Z" transform="translate(150.1 37.3) rotate(-194.0)"/><path style="--i:18" d="M0 0Q6.8 -5.0 15.0 0Q6.8 5.0 0 0Z" transform="translate(150.1 37.3) rotate(-156.0)"/></g></g><g class="gv-glob" fill="none" stroke="var(--gv-glob, #1d3557)" stroke-width="1.2" opacity=".45"><circle cx="120" cy="120" r="20"/><circle cx="120" cy="120" r="40"/><circle cx="120" cy="120" r="60"/><path d="M120 120L180.0 120.0"/><path d="M120 120L172.0 150.0"/><path d="M120 120L150.0 172.0"/><path d="M120 120L120.0 180.0"/><path d="M120 120L90.0 172.0"/><path d="M120 120L68.0 150.0"/><path d="M120 120L60.0 120.0"/><path d="M120 120L68.0 90.0"/><path d="M120 120L90.0 68.0"/><path d="M120 120L120.0 60.0"/><path d="M120 120L150.0 68.0"/><path d="M120 120L172.0 90.0"/></g><g class="gv-siec" fill="none" stroke="var(--gv-wezel, #1d3557)" stroke-width="2.4" stroke-linecap="round"><path d="M120.0 120.0L120.0 80.0"/><path d="M120.0 120.0L154.6 140.0"/><path d="M120.0 120.0L85.4 140.0"/><path d="M120.0 80.0L90.0 68.0"/><path d="M120.0 80.0L150.0 68.0"/><path d="M154.6 140.0L180.0 120.0"/><path d="M154.6 140.0L150.0 172.0"/><path d="M85.4 140.0L90.0 172.0"/><path d="M85.4 140.0L60.0 120.0"/><path d="M90.0 68.0L150.0 68.0"/><path d="M150.0 68.0L180.0 120.0"/><path d="M180.0 120.0L150.0 172.0"/><path d="M150.0 172.0L90.0 172.0"/><path d="M90.0 172.0L60.0 120.0"/><path d="M60.0 120.0L90.0 68.0"/></g><g class="gv-wezly" fill="var(--gv-wezel, #1d3557)"><circle cx="120.0" cy="120.0" r="7"/><circle cx="120.0" cy="80.0" r="5"/><circle cx="154.6" cy="140.0" r="5"/><circle cx="85.4" cy="140.0" r="5"/><circle cx="90.0" cy="68.0" r="4.4"/><circle cx="150.0" cy="68.0" r="4.4"/><circle cx="180.0" cy="120.0" r="4.4"/><circle cx="150.0" cy="172.0" r="4.4"/><circle cx="90.0" cy="172.0" r="4.4"/><circle cx="60.0" cy="120.0" r="4.4"/></g><!--/EMBLEMAT-G--></svg>
+    </div>
+  </div>
+</header>
+
+<section class="programy">
+  <div class="wrap">
+    <h2>Programy, z których pozyskujemy środki</h2>
+    <div class="programy-grid">
+      <div class="znak"><img class="ue" src="../assets/loga/flaga-ue.svg" alt="Flaga Unii Europejskiej">Fundusze<br>Europejskie</div>
+      <div class="znak"><img class="parp" src="../assets/loga/parp.svg" alt="PARP, Polska Agencja Rozwoju Przedsiębiorczości"></div>
+      <div class="znak">FENG<br><small>Ścieżka SMART</small></div>
+      <div class="znak">KPO</div>
+      <div class="znak">FESL 2021-2027</div>
+      <div class="znak">Horyzont Europa</div>
+      <div class="znak">EIC Accelerator</div>
+    </div>
+    <p>Znaki programów pokazujemy informacyjnie. Gloria Victis jest firmą doradczą i wykonawczą, nie instytucją pośredniczącą.</p>
+  </div>
+</section>
+
+<section class="sekcja" id="proces">
+  <div class="wrap proces">
+    <div class="proces-glowa">
+      <h2>Od rozmowy w twojej firmie do ostatniego rozliczenia</h2>
+      <p>Większość firm, z którymi rozmawiamy, ma zdolność do dotacji i pieniądze na wkład własny. Brakuje im pomysłu, który obroni się przed oceniającym i przyda się w zakładzie po zakończeniu projektu. Tu zaczynamy.</p>
+    </div>
+    <ol class="kroki">
+      <li><h3>Rozmowa u ciebie</h3><span class="czas">1 dzień</span><p>Nasz doradca przyjeżdża, ogląda halę i biuro, pyta o procesy, które zjadają najwięcej czasu, i o budżet na wkład własny.</p></li>
+      <li><h3>Burza mózgów</h3><span class="czas">1 tydzień</span><p>Siadamy w 6-10 osób: doradca, ekonomista i naukowcy z dziedzin pasujących do twojej branży. Wychodzi z tego lista pomysłów z szacunkiem kosztów.</p></li>
+      <li><h3>Koncepcja w PDF</h3><span class="czas">2-3 tygodnie</span><p>Dostajesz 2-3 warianty innowacji z wizualizacjami, kosztorysem, pokazem prototypu i oceną szans w konkretnych naborach.</p></li>
+      <li><h3>Zespół i harmonogram</h3><span class="czas">1 tydzień</span><p>Pokazujemy, kto z imienia i nazwiska zrobi projekt i kiedy ma wolne okna. Nie obiecujemy ludzi, których nie mamy.</p></li>
+      <li><h3>Wniosek</h3><span class="czas">4-8 tygodni</span><p>Piszemy wniosek, biznesplan i część badawczą. Odpowiadamy na uwagi oceniających i poprawiamy, aż przejdzie.</p></li>
+      <li><h3>Realizacja</h3><span class="czas">12-36 miesięcy</span><p>Jako generalny wykonawca budujemy technologię: oprogramowanie, automatykę, modele AI, prototypy i linie pilotażowe.</p></li>
+      <li><h3>Rozliczenie i trwałość</h3><span class="czas">do 5 lat</span><p>Wnioski o płatność, kontrole, raporty z okresu trwałości. Zostajemy z tobą, dopóki instytucja nie zamknie projektu.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sekcja katalog" id="katalog">
+  <div class="wrap">
+    <div class="katalog-glowa">
+      <div>
+        <h2>Katalog specjalistów</h2>
+        <p>142 osoby, z których składamy zespół pod twój projekt. Filtruj po dziedzinie, tytule i dostępności.</p>
+      </div>
+      <input class="szukaj" type="search" placeholder="Szukaj po nazwisku albo specjalizacji" aria-label="Szukaj specjalisty">
+    </div>
+    <div class="filtry" role="group" aria-label="Dziedziny">
+      <button class="filtr" aria-pressed="true">Wszyscy<span>142</span></button>
+      <button class="filtr" aria-pressed="false">Informatyka i AI<span>38</span></button>
+      <button class="filtr" aria-pressed="false">Automatyka i robotyka<span>21</span></button>
+      <button class="filtr" aria-pressed="false">Fizyka<span>14</span></button>
+      <button class="filtr" aria-pressed="false">Matematyka<span>12</span></button>
+      <button class="filtr" aria-pressed="false">Chemia<span>11</span></button>
+      <button class="filtr" aria-pressed="false">Inżynieria materiałowa<span>9</span></button>
+    </div>
+    <div class="osoby">
+      <article class="osoba"><img src="../assets/img/ludzie/m13.jpg" alt=""><div><div class="tytul">prof. dr hab. inż.</div><h3>Andrzej Wawrzyniak</h3><div class="dz">Automatyka i robotyka</div><p class="spec">Sterowanie predykcyjne, zrobotyzowane stanowiska spawalnicze</p><div class="dost pozniej">Wolne okno od stycznia 2027</div></div></article>
+      <article class="osoba"><img src="../assets/img/ludzie/k14.jpg" alt=""><div><div class="tytul">prof. dr hab.</div><h3>Elżbieta Kowalczyk-Nowak</h3><div class="dz">Chemia</div><p class="spec">Polimery biodegradowalne, recykling tworzyw sztucznych</p><div class="dost">Dostępna teraz</div></div></article>
+      <article class="osoba"><img src="../assets/img/ludzie/m21.jpg" alt=""><div><div class="tytul">dr hab. inż.</div><h3>Tomasz Lisiecki</h3><div class="dz">Fizyka</div><p class="spec">Optyka, czujniki światłowodowe, pomiary w trudnych warunkach</p><div class="dost">Dostępny teraz</div></div></article>
+      <article class="osoba"><img src="../assets/img/ludzie/k23.jpg" alt=""><div><div class="tytul">dr inż.</div><h3>Magdalena Sowa</h3><div class="dz">Informatyka i AI</div><p class="spec">Wizja maszynowa, automatyczna kontrola jakości na linii</p><div class="dost pozniej">Wolne okno od marca 2027</div></div></article>
+      <article class="osoba"><img src="../assets/img/ludzie/m66.jpg" alt=""><div><div class="tytul">prof. dr hab.</div><h3>Jerzy Domański</h3><div class="dz">Matematyka</div><p class="spec">Optymalizacja, badania operacyjne, planowanie produkcji i logistyki</p><div class="dost">Dostępny teraz</div></div></article>
+      <article class="osoba"><img src="../assets/img/ludzie/m31.jpg" alt=""><div><div class="tytul">mgr inż.</div><h3>Paweł Kubiak</h3><div class="dz">Informatyka i AI</div><p class="spec">Automatyzacja procesów (RPA), integracje z systemami ERP</p><div class="dost">Dostępny teraz</div></div></article>
+    </div>
+  </div>
+</section>
+
+<div class="przelacznik" role="group" aria-label="Wybór makiety">
+  <button data-t="a">A<span class="opis"> Granat i złoto</span></button>
+  <button data-t="b">B<span class="opis"> Zieleń i mosiądz</span></button>
+  <button data-t="c">C<span class="opis"> Atrament i turkus</span></button>
+</div>
+
+<script>
+  const ustaw = t => {
+    document.documentElement.dataset.theme = t;
+    document.querySelectorAll('.przelacznik button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === t));
+    history.replaceState(null, '', '#' + t);
+  };
+  document.querySelectorAll('.przelacznik button').forEach(b => b.addEventListener('click', () => ustaw(b.dataset.t)));
+  ustaw(['a', 'b', 'c'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'a');
+</script>
+</body>
+</html>
