@@ -82,7 +82,7 @@ window.SPECJALISCI = [
 "kierownik 6 projektów badawczych"
 ],
 "projekty": 6,
-"foto": "m66"
+"foto": "m38"
 },
 {
 "id": 5,
